@@ -1,5 +1,9 @@
 ###### CS-E4300 Network Security, Aalto University 2021-2022
 
+### Olli notes:
+
+Call the `vagrant up` in the project root, **not** inside the base (not sure if it is necessary to call there once?)
+
 ### Virtual network environment for student projects
 
 _Authors: Tuomas Aura, Aleksi Peltonen, Thanh Bui_
