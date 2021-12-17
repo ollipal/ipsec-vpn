@@ -4,6 +4,32 @@
 
 Call the `vagrant up` in the project root, **not** inside the base (not sure if it is necessary to call there once?)
 
+Changed for the cloud to have a private netword
+
+IPsec VPN setup done with a pre-shared key, similar to this guide:
+`https://blog.ruanbekker.com/blog/2018/02/11/setup-a-site-to-site-ipsec-vpn-with-strongswan-and-preshared-key-authentication/`
+
+
+`openssl rand -base64 64` to generate the preshared key:
+LTG2h9OEa+NKlMag29uUluK/AyPJfBST2Ao0bN8F9WbpEYX0aUui44aJTl7QBCofb2RcD0r0KP3m0lVn2mF7lQ==
+
+Site A
+External IP: 172.16.16.16
+Internal IP: 10.1.0.1/16
+
+Site B
+External IP: 172.18.18.18
+Internal IP: 10.1.0.1/16
+
+Cloud S:
+External IP: 172.30.30.30
+Internal IP: 10.2.0.1/16
+
+**After** vagrant up:
+`scripts/post_vagrant_up.sh`
+
+A good WireGuard configuration video for Project 3: https://www.youtube.com/watch?v=bVKNSf1p1d0
+
 ### Virtual network environment for student projects
 
 _Authors: Tuomas Aura, Aleksi Peltonen, Thanh Bui_
