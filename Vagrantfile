@@ -183,7 +183,7 @@ Vagrant.configure("2") do |config|
       virtualbox__intnet: "isp_link_b"
     # Interface towards customer site network
     gateway_b.vm.network "private_network",
-      ip: "10.1.0.1",
+      ip: "10.3.0.1",
       netmask: "255.255.0.0",
       virtualbox__intnet: "intranet_b"
     gateway_b.vm.provider "virtualbox" do |vb|
@@ -209,7 +209,7 @@ Vagrant.configure("2") do |config|
     ## NETWORK INTERFACES
     # Interface towards customer site network
     server_b.vm.network "private_network",
-      ip: "10.1.0.99",
+      ip: "10.3.0.99",
       netmask: "255.255.0.0",
       virtualbox__intnet: "intranet_b"
     server_b.vm.provider "virtualbox" do |vb|
@@ -237,7 +237,7 @@ Vagrant.configure("2") do |config|
     ## NETWORK INTERFACES
     # Interface towards customer site network
     client_b1.vm.network "private_network",
-      ip: "10.1.0.2",
+      ip: "10.3.0.2",
       netmask: "255.255.0.0",
       virtualbox__intnet: "intranet_b"
     client_b1.vm.provider "virtualbox" do |vb|
@@ -265,7 +265,7 @@ Vagrant.configure("2") do |config|
     ## NETWORK INTERFACES
     # Interface towards customer site network
     client_b2.vm.network "private_network",
-      ip: "10.1.0.3",
+      ip: "10.3.0.3",
       netmask: "255.255.0.0",
       virtualbox__intnet: "intranet_b"
     client_b2.vm.provider "virtualbox" do |vb|

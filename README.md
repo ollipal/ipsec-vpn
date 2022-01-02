@@ -28,7 +28,16 @@ Internal IP: 10.2.0.1/16
 **After** vagrant up:
 `scripts/post_vagrant_up.sh`
 
+## NOTE:
+Server B not working
+`sudo iptables -t nat -L`, works without any nat rules!
+
 A good WireGuard configuration video for Project 3: https://www.youtube.com/watch?v=bVKNSf1p1d0
+
+The configuration works only if there is one????
+
+When vagrant up:
+client-b2: SIOCADDRT: Network is unreachable
 
 ### Virtual network environment for student projects
 
