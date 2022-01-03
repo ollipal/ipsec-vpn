@@ -12,7 +12,7 @@ echo "Configuring Client-A1"
 vagrant ssh client-a1 -c "rm /home/vagrant/client_app/config.json"
 vagrant ssh client-a1 -c 'cat >> /home/vagrant/client_app/config.json << EOF
 {
-  "server_ip": "10.2.1.1",
+  "server_ip": "172.30.30.30",
   "server_port": "8080",
   "log_file": "/var/log/client.log"
 }

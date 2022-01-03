@@ -24,9 +24,9 @@ conn s-to-a
   authby=secret
   left=%defaultroute
   leftid=172.30.30.30
-  leftsubnet=10.2.0.1/16
+  leftsubnet=172.30.30.30/32
   right=172.16.16.16
-  rightsubnet=10.1.0.1/16
+  rightsubnet=172.16.16.16/32
   ike=aes256-sha2_256-modp1024!
   esp=aes256-sha2_256!
   keyingtries=0
@@ -58,11 +58,13 @@ EOF
 
 ## NAT
 # A
-iptables -t nat -A POSTROUTING -o enp0s8 -s 10.1.0.0/16 -d 10.2.0.0/16 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -o enp0s8 -s 10.1.0.0/16 -d 10.2.0.0/16 -j MASQUERADE
 # B
-iptables -t nat -A POSTROUTING -o enp0s8 -s 10.3.0.0/16 -d 10.2.0.0/16 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -o enp0s8 -s 10.3.0.0/16 -d 10.2.0.0/16 -j MASQUERADE
 # other than tunnel internet conneciton:
 iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE
+
+iptables -t nat -A PREROUTING -s 172.18.18.18 -j DNAT --to-destination 10.2.1.1
 
 ## Save the iptables rules
 iptables-save > /etc/iptables/rules.v4

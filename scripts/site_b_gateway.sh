@@ -40,7 +40,7 @@ EOF
 ## NAT
 #This is not working, would be nice to not need to configure the server_ip
 #iptables -t nat -A OUTPUT -p tcp --dport 8080 -j DNAT --to-destination 10.2.1.1:8080
-iptables -t nat -A POSTROUTING -o enp0s8 -s 10.3.0.0/16 -d 10.1.0.0/16 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -o enp0s8 -s 10.3.0.0/16 -d 10.1.0.0/16 -j MASQUERADE
 # Internet connection before Gateway-S is up:
 iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE
 
