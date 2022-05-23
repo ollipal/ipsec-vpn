@@ -23,9 +23,9 @@ conn a-to-s
   authby=secret
   left=%defaultroute
   leftid=172.18.18.18
-  leftsubnet=10.3.0.1/16
+  leftsubnet=172.18.18.18/32
   right=172.30.30.30
-  rightsubnet=10.2.0.1/16
+  rightsubnet=172.30.30.30/32
   ike=aes256-sha2_256-modp1024!
   esp=aes256-sha2_256!
   keyingtries=0
